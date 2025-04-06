@@ -1,0 +1,531 @@
+/* Global styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    height: 85px;
+    opacity: 75%;
+    width: 100%;
+    background: white;
+    z-index: 1000;
+    transition: top 0.3s ease-in-out;
+}
+
+header.hidden {
+    top: -80px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 30px;
+}
+
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+nav ul li a{
+    margin-right: 20px;
+    color: black;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: red;
+}
+
+.logo a{
+    font-size: 2rem;
+    font-weight:500;
+    color: #000000;
+    margin: 0;
+    text-decoration: none;
+}
+
+.logo a:hover {
+    color: red;
+}
+
+.hero{
+    width: 100%;
+    height: 100%;
+    background: url("/public/img/mainpage.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.hero-content{
+    width: 100vw;
+    height: 100vh;
+    display: left;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+.visionary-section {
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.875rem;
+}
+
+.visionary-text {
+    text-align: center;
+    max-width: 450px;
+    padding: 2.5rem;
+}
+
+.visionary-text p {
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: black;
+}
+
+.visionary-section {
+    opacity: 0;
+    transform: translateY(150px);
+    transition: opacity 2s ease-out, transform 2s ease-out;
+}
+
+.visionary-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.smallimage-section,
+.bigimage-section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    padding: 1.25rem;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.smallimage-container,
+.bigimage-container {
+    flex: 1;
+    position: relative;
+    padding: 1.25rem;
+    box-sizing: border-box;
+}
+
+.E20 {
+    width: 100%;
+    height: 100%;
+    background: url("/public/img/E20.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transform: translateY(90px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.E20::after {
+    content: "E20";
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    color: black;
+    font-size: 1.3rem;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.E20::before {
+    content: "MACH 2025";
+    position: absolute;
+    top: 70px;
+    left: 40px;
+    color: black;
+    font-size: 1.3rem;
+    font-weight: 300;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.E20:hover::after,
+.E20:hover::before {
+    opacity: 1;
+}
+
+.R1-Ultra {
+    width: 100%;
+    height: 100%;
+    background: url("/public/img/R1-Ultra.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transform: translateY(90px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.R1-Ultra::after {
+    content: "R1 Ultra";
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    color: black;
+    font-size: 1.3rem;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.R1-Ultra::before {
+    content: "MACH 2024";
+    position: absolute;
+    top: 70px;
+    left: 40px;
+    color: black;
+    font-size: 1.3rem;
+    font-weight: 300;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+
+.R1-Ultra:hover::after,
+.R1-Ultra:hover::before {
+    opacity: 1;
+}
+
+.V1 {
+    width: auto;
+    height: 100%;
+}
+
+.V-1 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    opacity: 0;
+    transform: translateY(80px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.V-1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.V-1::after {
+    content: "V1";
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    color: black;
+    font-size: 1.3rem;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.V-1::before {
+    content: "MACH 2023";
+    position: absolute;
+    top: 70px;
+    left: 40px;
+    color: black;
+    font-size: 1.3rem;
+    font-weight: 300;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.V-1:hover::after,
+.V-1:hover::before {
+    opacity: 1;
+}
+
+.V1Ultra{
+    width: auto;
+    height: 100%;
+}
+
+.V1-Ultra{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    opacity: 0;
+    transform: translateY(80px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.V1-Ultra img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.V1-Ultra::after {
+    content: "V1 Ultra";
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    color: black;
+    font-size: 1.3rem;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.V1-Ultra::before {
+    content: "MACH 2022";
+    position: absolute;
+    top: 70px;
+    left: 40px;
+    color: black;
+    font-size: 1.3rem;
+    font-weight: 300;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.V1-Ultra:hover::after,
+.V1-Ultra:hover::before {
+    opacity: 1;
+}
+
+.V1Video-section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.V1Video-content {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    opacity: 0;
+    transform: translateY(80px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.MACHApp {
+    width: 100%;
+    height: 100%;
+    background: url("/public/img/MACHApp.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transform: translateY(80px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.MACHApp::after {
+    content: "MACH App";
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    color: black;
+    font-size: 1.3rem;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.MACHApp::before {
+    content: "MACH 2023";
+    position: absolute;
+    top: 70px;
+    left: 40px;
+    color: black;
+    font-size: 1.3rem;
+    font-weight: 300;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.MACHApp:hover::after,
+.MACHApp:hover::before {
+    opacity: 1;
+}
+
+.MACHBrand {
+    width: 100%;
+    height: 100%;
+    background: url("/public/img/MACHBrand.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transform: translateY(80px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.MACHBrand::after {
+    content: "MACH Brand Identity";
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    color: black;
+    font-size: 1.3rem;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.MACHBrand::before {
+    content: "MACH 2022";
+    position: absolute;
+    top: 70px;
+    left: 40px;
+    color: black;
+    font-size: 1.3rem;
+    font-weight: 300;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.MACHBrand:hover::after,
+.MACHBrand:hover::before {
+    opacity: 1;
+}
+
+.visionary-section.visible,
+.E20.visible,
+.R1-Ultra.visible,
+.V-1.visible,
+.V1-Ultra.visible,
+.MACHApp.visible,
+.MACHBrand.visible,
+.V1Video-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+/* MOBILE SIZE */
+@media screen and (max-width: 800px) {
+    .logo a {
+        font-size: 1.5rem;
+    }
+
+    .hero-content {
+        height: 100vw;
+    }
+
+    .visionary-text {
+        text-align: start;
+    }
+    
+    .visionary-text p {
+        font-size: 1.6rem;
+    }
+    
+    
+    .smallimage-section {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    .smallimage-container {
+        flex: none;
+        height: 80vh;
+        margin-bottom: 20px;
+    }
+    
+    .bigimage-section {
+        flex-direction: column;
+        height: auto;
+        min-height: auto;
+    }
+    
+    .E20::after,
+    .R1-Ultra::after,
+    .V-1::after,
+    .V1-Ultra::after,
+    .MACHApp::after,
+    .MACHBrand::after {
+        top: 20px;
+        left: 20px;
+        opacity: 1;
+        background: #F4F4F4;
+        padding: 5px 10px;
+    }
+
+    .E20::before,
+    .R1-Ultra::before,
+    .V-1::before,
+    .V1-Ultra::before,
+    .MACHApp::before,
+    .MACHBrand::before {
+        top: 50px;
+        left: 20px;
+        opacity: 1;
+        background: #F4F4F4;
+        padding: 5px 10px;
+    }
+
+
+    .E20,
+    .R1-Ultra,
+    .V-1,
+    .V1-Ultra,
+    .MACHApp,
+    .MACHBrand,
+    .V1Video-content {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .V1Video-section {
+        height: auto;
+        min-height: auto;
+    }
+    
+    .V1Video-content {
+        height: auto;
+        min-height: auto;
+    }
+    
+    .V-1 img, 
+    .V1-Ultra img {
+        max-height: 70vh;
+    }
+    
+    .visionary-section {
+        min-height: 30vh;
+    }
+};
